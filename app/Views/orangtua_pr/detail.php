@@ -19,7 +19,15 @@
                             <p class="card-text"><small class="text-muted"><b>Tanggal Dibuat: </b> <?= $orangtua_pr['created_at']; ?></small></p>
 
                             <a href="" class="btn btn-warning">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+
+                            <!-- tombol edit -->
+                            <form action="<?= base_url('/orangtua_pr'); ?>/<?= $orangtua_pr['id']; ?>" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                            </form>
+                            <!-- end tombol edit -->
+
                             <br><br>
                             <a href="<?= base_url('orangtua_pr/'); ?>">Kembali ke Daftar Orang Tua</a>
                         </div>

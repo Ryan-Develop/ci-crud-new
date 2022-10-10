@@ -51,25 +51,29 @@ $routes->set404Override();
 // route Mahasiswa Controller
 $routes->get('/', 'Mahasiswa::index');
 $routes->get('/mahasiswa', 'Mahasiswa::index');
-$routes->get('/mahasiswa/(:segment)', 'Mahasiswa::detail/$1');
+$routes->delete('/mahasiswa/(:num)', 'Mahasiswa::delete/$1');
+$routes->get('/mahasiswa/(:any)', 'Mahasiswa::detail/$1');
 $routes->get('/tambah_mahasiswa', 'TambahMahasiswa::index');
 $routes->post('/tambah_mahasiswa/save', 'TambahMahasiswa::save');
 
 // route orangtua_lk Controller
 $routes->get('/orangtua_lk', 'OrangTuaLk::index');
-$routes->get('/orangtua_lk/(:segment)', 'OrangTuaLk::detail/$1');
+$routes->delete('/orangtua_lk/(:num)', 'OrangTuaLk::delete/$1');
+$routes->get('/orangtua_lk/(:any)', 'OrangTuaLk::detail/$1');
 $routes->get('/tambah_orangtua_lk', 'TambahOrangTuaLk::index');
 $routes->post('/tambah_orangtua_lk/save', 'TambahOrangTuaLk::save');
 
 // route orangtua_pr Controller
 $routes->get('/orangtua_pr', 'OrangTuaPr::index');
-$routes->get('/orangtua_pr/(:segment)', 'OrangTuaPr::detail/$1');
+$routes->delete('orangtua_pr/(:num)', 'OrangTuaPr::delete/$1');
+$routes->get('/orangtua_pr/(:any)', 'OrangTuaPr::detail/$1');
 $routes->get('/tambah_orangtua_pr', 'TambahOrangTuaPr::index');
 $routes->post('/tambah_orangtua_pr/save', 'TambahOrangTuaPr::save');
 
 // route asal_sekolah Controller
 $routes->get('/asal_sekolah', 'AsalSekolah::index');
-$routes->get('/asal_sekolah/(:segment)', 'AsalSekolah::detail/$1');
+$routes->delete('/asal_sekolah/(:num)', 'AsalSekolah::delete/$1');
+$routes->get('/asal_sekolah/(:any)', 'AsalSekolah::detail/$1');
 $routes->get('/tambah_asal_sekolah', 'TambahAsalSekolah::index');
 $routes->post('/tambah_asal_sekolah/save', 'TambahAsalSekolah::save');
 

@@ -44,4 +44,11 @@ class AsalSekolah extends BaseController
         }
         return view('asal_sekolah/detail', $data);
     }
+
+    public function delete($id)
+    {
+
+        $this->asal_sekolah_Model->delete($id);
+        return redirect()->to('/asal_sekolah');
+    }
 }

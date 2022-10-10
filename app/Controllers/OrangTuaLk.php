@@ -9,7 +9,6 @@ use App\Models\OrangTuaLkModel;
 class OrangTuaLk extends BaseController
 {
     protected $orangtua_lk_Model;
-    protected $orangtua_pr_Model;
 
     public function __construct()
     {
@@ -41,5 +40,12 @@ class OrangTuaLk extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Nama Orang Tua Dengan NIK ' . $nik . ' Tidak Ditemukan');
         }
         return view('orangtua_lk/detail', $data);
+    }
+
+    public function delete($id)
+    {
+
+        $this->orangtua_lk_Model->delete($id);
+        return redirect()->to('/orangtua_lk');
     }
 }

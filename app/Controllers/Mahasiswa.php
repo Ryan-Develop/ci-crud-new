@@ -44,4 +44,11 @@ class Mahasiswa extends BaseController
         }
         return view('mahasiswa/detail', $data);
     }
+
+    public function delete($id)
+    {
+
+        $this->mahasiswaModel->delete($id);
+        return redirect()->to('/mahasiswa');
+    }
 }
