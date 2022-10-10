@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <a href="<?= base_url('tambah_orangtua_pr'); ?>" class="btn btn-primary mt-3">Tambah Data Mahasiswa</a>
+            <a href="<?= base_url('tambah_orangtua_pr'); ?>" class="btn btn-primary mt-3">Tambah Data Orang Tua</a>
             <h2 class="mt-2">List Daftar Nama Orang Tua (Wanita)</h2>
 
             <table class="table table-striped">

@@ -50,6 +50,7 @@ $routes->set404Override();
 
 // route Mahasiswa Controller
 $routes->get('/', 'Mahasiswa::index');
+$routes->get('/mahasiswa', 'Mahasiswa::index');
 $routes->get('/mahasiswa/(:segment)', 'Mahasiswa::detail/$1');
 $routes->get('/tambah_mahasiswa', 'TambahMahasiswa::index');
 $routes->post('/tambah_mahasiswa/save', 'TambahMahasiswa::save');
