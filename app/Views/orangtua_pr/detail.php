@@ -18,15 +18,15 @@
                             <p class="card-text"><b>Pendidikan: </b> <?= $orangtua_pr['pendidikan_terakhir']; ?></p>
                             <p class="card-text"><small class="text-muted"><b>Tanggal Dibuat: </b> <?= $orangtua_pr['created_at']; ?></small></p>
 
-                            <a href="" class="btn btn-warning">Edit</a>
+                            <a href="<?= base_url('/orangtua_pr/edit'); ?>/<?= $orangtua_pr['nik']; ?>" class="btn btn-warning">Edit</a>
 
-                            <!-- tombol edit -->
+                            <!-- tombol DELETE -->
                             <form action="<?= base_url('/orangtua_pr'); ?>/<?= $orangtua_pr['id']; ?>" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="DELETE">
                             </form>
-                            <!-- end tombol edit -->
+                            <!-- end tombol DELETE -->
 
                             <br><br>
                             <a href="<?= base_url('orangtua_pr/'); ?>">Kembali ke Daftar Orang Tua</a>

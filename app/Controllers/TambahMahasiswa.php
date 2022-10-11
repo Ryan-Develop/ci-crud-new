@@ -42,4 +42,35 @@ class TambahMahasiswa extends BaseController
 
         return redirect()->to('mahasiswa');
     }
+
+    public function edit($nim)
+    {
+        $data = [
+            'title' => 'Form Ubah Data Mahasiswa',
+            'validation' => \Config\Services::validation(),
+            'mahasiswa' => $this->mahasiswaModel->getMahasiswa($nim)
+        ];
+
+        return view('mahasiswa/edit', $data);
+    }
+
+    public function update($id)
+    {
+        $this->mahasiswaModel->save([
+            'id' => $id,
+            'nama' => $this->request->getVar('nama'),
+            'nim' => $this->request->getVar('nim'),
+            'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+            'agama' => $this->request->getVar('agama'),
+            'prodi' => $this->request->getVar('prodi'),
+            'ttl' => $this->request->getVar('ttl'),
+            'alamat' => $this->request->getVar('alamat'),
+            'asal_sekolah' => $this->request->getVar('asal_sekolah'),
+            'gambar' => $this->request->getVar('gambar')
+        ]);
+
+        // session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan.');
+
+        return redirect()->to('/mahasiswa');
+    }
 }

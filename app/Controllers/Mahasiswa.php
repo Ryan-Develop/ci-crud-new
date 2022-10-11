@@ -49,6 +49,7 @@ class Mahasiswa extends BaseController
     {
 
         $this->mahasiswaModel->delete($id);
+        session()->setFlashdata('pesan', 'Data Berhasil Dihapus.');
         return redirect()->to('/mahasiswa');
     }
 }

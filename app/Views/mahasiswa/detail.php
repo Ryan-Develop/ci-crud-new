@@ -21,15 +21,16 @@
                             <p class="card-text"><b>Alamat: </b> <?= $mahasiswa['alamat']; ?></p>
                             <p class="card-text"><b>Asal Sekolah: </b> <?= $mahasiswa['asal_sekolah']; ?></p>
                             <p class="card-text"><small class="text-muted"><b>Tanggal Dibuat: </b> <?= $mahasiswa['created_at']; ?></small></p>
-                            <a href="" class="btn btn-warning">Edit</a>
 
-                            <!-- tombol edit -->
+                            <a href="<?= base_url('/mahasiswa/edit'); ?>/<?= $mahasiswa['nim']; ?>" class="btn btn-warning">Edit</a>
+
+                            <!-- tombol DELETE -->
                             <form action="<?= base_url('/mahasiswa'); ?>/<?= $mahasiswa['id']; ?>" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="DELETE">
                             </form>
-                            <!-- end tombol edit -->
+                            <!-- end tombol DELETE -->
 
                             <br><br>
                             <a href="<?= base_url('mahasiswa/'); ?>">Kembali ke Daftar Mahasiswa</a>
